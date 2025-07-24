@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sportiva - Your Sports Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home_styles.css">
+  <link rel="stylesheet" href="css/auth_styles.css"> <!-- Tambahkan CSS untuk modal -->
+</head>
+<body>
+  <div class="page-container">
+    <header class="site-header">
+      <div class="header-content">
+        <div class="logo-area">
+          <a href="index.html" class="logo-text">Sportiva</a>
+        </div>
+        
+        <div class="header-right">
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="sewa_lapangan.html">Sewa lapangan</a></li>
+              <li><a href="mabar.html">Mabar</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-actions">
+            <a class="cart-link">
+              <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </a>
+            <!-- Tombol sebelum login -->
+            <div class="auth-buttons" id="auth-buttons-logged-out">
+              <a href="#" class="btn-login" id="login-btn-header">Masuk</a>
+              <a href="#" class="btn-register" id="register-btn-header">Daftar</a>
+            </div>
+             <!-- Tampilan setelah login (disembunyikan secara default) -->
+            <div class="auth-buttons" id="auth-buttons-logged-in" style="display: none;">
+                <a href="#" class="user-profile">
+                    <img src="images/user.png" alt="User" style="width: 24px; height: 24px; border-radius: 50%; margin-right: 5px;">
+                    <span>User</span>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="hero-section">
+      <div class="slider-wrapper"></div>
+      <button class="slider-arrow prev-arrow" aria-label="Previous Slide">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <div class="hero-center-content">
+        <div class="info-box">
+          <h1>Football</h1>
+          <p>Details On Training Sessions, Tournaments, And Court Booking.</p>
+        </div>
+        <div class="slider-pagination">
+          <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+      <button class="slider-arrow next-arrow" aria-label="Next Slide">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2000 - Company, Inc. All rights reserved. Address Address</p>
+    </footer>
+  </div>
+
+  <div class="sidebar-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header">
+      <h2>Jadwal Dipilih</h2>
+      <button class="close-btn" aria-label="Close cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cart-body"><div class="cart-empty"><p>belum ada di keranjang.</p></div></div>
+  </aside>
+
+  <!-- MODAL LOGIN/REGISTER -->
+  <div class="auth-modal-overlay" id="auth-modal-container">
+    <div class="auth-modal">
+      <button class="close-modal-btn" id="close-modal-btn">×</button>
+      
+      <!-- Register Form -->
+      <div class="form-container" id="register-form">
+        <h3>Daftar</h3>
+        <p>Sudah punya akun sportiva? <span class="switch-link" id="switch-to-login">Masuk</span></p>
+        <div class="form-group"><input type="text" placeholder="Nomor ponsel atau email"></div>
+        <div class="form-group"><input type="password" placeholder="Password"></div>
+        <button class="btn" id="register-next-btn">Selanjutnya</button>
+        <p class="separator">atau</p>
+        <button class="btn">Daftar dengan google</button>
+      </div>
+
+      <!-- Login Form -->
+      <div class="form-container hidden from-right" id="login-form">
+        <h3>Masuk</h3>
+        <p>Belum punya akun sportiva? <span class="switch-link" id="switch-to-register">Daftar</span></p>
+        <div class="form-group"><input type="text" placeholder="Nomor ponsel atau email"></div>
+        <div class="form-group"><input type="password" placeholder="Password"></div>
+        <button class="btn" id="login-next-btn">Selanjutnya</button>
+        <p class="separator">atau</p>
+        <button class="btn">Masuk dengan google</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

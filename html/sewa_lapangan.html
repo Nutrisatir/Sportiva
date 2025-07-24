@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sewa Lapangan - Sportiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/sewa_lapangan_styles.css">
+</head>
+<body>
+  <div class="page-container">
+    <header class="site-header">
+      <div class="header-content">
+        <div class="logo-area">
+          <a href="index.html" class="logo-text">Sportiva</a>
+        </div>
+        
+        <div class="header-right">
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="sewa_lapangan.html" class="active">Sewa lapangan</a></li>
+              <li><a href="mabar.html">Mabar</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-actions">
+            <a class="cart-link">
+              <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </a>
+            <div class="auth-buttons">
+              <a href="#" class="btn-login">Masuk</a>
+              <a href="#" class="btn-register">Daftar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <main class="main-content">
+      <div class="search-container">
+        <form class="search-form" action="#" method="GET">
+          <div class="input-group">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" name="venue_name" placeholder="Cari nama venue">
+          </div>
+          <div class="input-group">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <input type="text" name="city" placeholder="Pilih Kota">
+          </div>
+          <div class="input-group">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5c0 1.43-1.02 3.82-3.13 5.42a2.3 2.3 0 0 1-3.74 0C7.02 10.82 6 8.43 6 7a5 5 0 0 1 5-5z"></path><path d="M12 14c-4.67 0-8 1.79-8 4v2h16v-2c0-2.21-3.33-4-8-4z"></path></svg>
+            <input type="text" name="sport" placeholder="Pilih Cabang Olahraga">
+          </div>
+          <button type="submit" class="search-button">Cari venue</button>
+        </form>
+      </div>
+      
+      <div class="results-area">
+        <div class="venue-grid">
+          <article class="venue-card"><a href="venue_detail.html"><img src="images/centro_sawah_besar_1749748084308_76.png" alt="Venue Image"><div class="card-info"><h3>Centro Sawah Besar</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames ipsum pulvinar.</p></div></a></article>
+          <article class="venue-card"><a href="#"><img src="images/metro_atom_futsal_badminton_1749748084309_127.png" alt="Venue Image"><div class="card-info"><h3>Metro Atom Futsal</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames ipsum pulvinar.</p></div></a></article>
+          <article class="venue-card"><a href="#"><img src="images/gala_sport_asem_reges_1749748084308_38.png" alt="Venue Image"><div class="card-info"><h3>Gala Sport Asem Reges</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames ipsum pulvinar.</p></div></a></article>
+          <article class="venue-card"><a href="#"><img src="images/centro_sawah_besar_1749748084308_76.png" alt="Venue Image"><div class="card-info"><h3>Centro Sawah Besar</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames ipsum pulvinar.</p></div></a></article>
+          <article class="venue-card"><a href="#"><img src="images/metro_atom_futsal_badminton_1749748084309_127.png" alt="Venue Image"><div class="card-info"><h3>Metro Atom Futsal</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames ipsum pulvinar.</p></div></a></article>
+          <article class="venue-card"><a href="#"><img src="images/gala_sport_asem_reges_1749748084308_38.png" alt="Venue Image"><div class="card-info"><h3>Gala Sport Asem Reges</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames ipsum pulvinar.</p></div></a></article>
+          <article class="venue-card"><a href="#"><img src="images/centro_sawah_besar_1749748084308_76.png" alt="Venue Image"><div class="card-info"><h3>Centro Sawah Besar</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames ipsum pulvinar.</p></div></a></article>
+          <article class="venue-card"><a href="#"><img src="images/metro_atom_futsal_badminton_1749748084309_127.png" alt="Venue Image"><div class="card-info"><h3>Metro Atom Futsal</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fames ipsum pulvinar.</p></div></a></article>
+        </div>
+        <div class="side-pagination">
+          <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2000 - Company, Inc. All rights reserved. Address Address</p>
+    </footer>
+  </div>
+
+  <div class="sidebar-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-header">
+      <h2>Jadwal Dipilih</h2>
+      <button class="close-btn" aria-label="Close cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cart-body">
+      <div class="cart-empty">
+        <p>belum ada di keranjang.</p>
+      </div>
+    </div>
+  </aside>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
