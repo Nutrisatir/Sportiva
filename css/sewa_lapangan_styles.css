@@ -1,0 +1,196 @@
+/* BARIS INI WAJIB MENJADI YANG PERTAMA, TIDAK BOLEH ADA APAPUN DI ATASNYA */
+@import url("sidebar_styles.css");
+
+/* === SEMUA KODE CSS LAINNYA DIMULAI DARI SINI === */
+
+:root {
+  --gradient-blue: linear-gradient(162deg, #14A4EE 0%, #126BA8 34%, #0C3A6B 66%, #081F49 100%);
+  --text-white: #ffffff;
+  --text-dark-blue: #0D4072;
+  --accent-green: #A8E910;
+  --dot-active-blue: #0C4073;
+  --background-light: #F8F9FA;
+  --border-color: #DEE2E6;
+  --text-dark: #212529;
+  --text-muted: #6C757D;
+  --card-bg: #E9ECEF;
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Rubik', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-primary); background-color: var(--background-light); color: var(--text-dark); line-height: 1.6; }
+a { text-decoration: none; color: inherit; transition: opacity 0.3s ease; }
+a:hover { opacity: 0.8; }
+ul { list-style: none; }
+.page-container { display: flex; flex-direction: column; min-height: 100vh; }
+
+.site-header { background: var(--gradient-blue); height: 75px; padding: 0 40px; display: flex; align-items: center; position: sticky; top: 0; z-index: 999; }
+.header-content { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+.logo-area { display: flex; align-items: center; }
+.logo-text { font-size: 24px; font-weight: 700; font-style: italic; color: var(--text-white); letter-spacing: 2px; }
+
+.header-right { display: flex; align-items: center; gap: 50px; }
+.main-nav ul { display: flex; gap: 45px; }
+.main-nav a { font-size: 15px; font-weight: 700; color: var(--text-white); position: relative; padding-bottom: 8px; }
+.main-nav a.active { color: var(--accent-green); }
+.main-nav a.active::after { content: ''; position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background-color: var(--accent-green); border-radius: 50%; }
+
+.header-actions { display: flex; align-items: center; gap: 30px; }
+.cart-link { cursor: pointer; }
+.cart-icon { stroke: var(--text-white); width: 29px; height: 29px; }
+.auth-buttons { display: flex; align-items: center; gap: 1rem; }
+.auth-buttons a { font-weight: 700; font-size: 14px; border-radius: 6px; padding: 6px 15px; display: inline-block; text-align: center; }
+.btn-login { color: var(--text-white); }
+.btn-register { background-color: var(--text-white); color: var(--text-dark-blue); }
+
+.site-footer { background: var(--gradient-blue); padding: 35px 20px; text-align: center; color: var(--text-white); }
+.site-footer p { font-family: var(--font-mono); font-size: 16px; }
+
+.main-content { flex-grow: 1; padding: 40px; max-width: 1440px; margin: 0 auto; width: 100%; }
+
+/* === STYLE BARU UNTUK FORM FILTER (VERSI PROFESIONAL) === */
+
+.search-container {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.search-form {
+  display: flex;
+  align-items: stretch; /* Membuat semua item memiliki tinggi yang sama */
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Shadow lebih halus */
+  border: 1px solid #F0F0F0;
+}
+
+.input-group {
+  flex: 1 1 220px; /* Fleksibel dan responsif */
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  height: 50px; /* Tinggi form yang lebih premium */
+  position: relative; /* Penting untuk panah dropdown kustom */
+  border-right: 1px solid #F0F0F0; /* Garis pemisah vertikal */
+}
+
+.input-icon {
+  width: 20px;
+  height: 20px;
+  stroke: #999; /* Warna ikon abu-abu netral */
+  margin-right: 12px;
+  flex-shrink: 0;
+  transition: stroke 0.2s ease;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  font-family: var(--font-primary);
+  color: var(--text-dark);
+  -webkit-appearance: none; /* WAJIB untuk styling kustom */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.input-group select {
+  cursor: pointer;
+}
+
+.input-group input::placeholder {
+  color: #999;
+}
+.input-group select:invalid {
+  color: #999;
+}
+.input-group select option {
+  color: var(--text-dark);
+  background: #fff; /* Pastikan background option putih */
+}
+
+.input-group:focus-within .input-icon {
+    stroke: var(--text-dark-blue);
+}
+
+/* PANAH DROPDOWN KUSTOM */
+.input-group.has-select::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #999; /* Warna panah */
+    pointer-events: none; /* Agar tidak bisa diklik */
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.input-group.has-select:focus-within::after {
+    border-top-color: var(--text-dark-blue);
+}
+
+/* TOMBOL CARI VENUE */
+.search-button {
+  background-color: var(--text-dark-blue);
+  color: var(--text-white);
+  border: none;
+  border-radius: 8px;
+  padding: 0 32px;
+  margin-left: 8px;
+  height: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.search-button:hover {
+  background-color: #0C3A6B;
+  box-shadow: 0 4px 12px rgba(13, 64, 114, 0.2);
+}
+
+/* Hapus garis pemisah dari grup input terakhir */
+.search-form .input-group:last-of-type {
+    border-right: none;
+}
+
+/* === AKHIR DARI STYLE FORM FILTER === */
+
+.results-area { display: flex; gap: 40px; }
+.venue-grid { flex-grow: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+.venue-card { background-color: #FFF; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.venue-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+.venue-card img { width: 100%; height: 180px; object-fit: cover; display: block; background-color: var(--card-bg); }
+.card-info { padding: 20px; }
+.card-info h3 { margin-bottom: 5px; font-size: 18px; font-weight: 500; font-family: var(--font-secondary); color: var(--text-dark); }
+
+.card-info .venue-location {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark-blue);
+  margin-bottom: 8px;
+}
+.card-info p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+.side-pagination { display: flex; flex-direction: column; gap: 12px; align-items: center; padding-top: 10px; }
+.dot { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--text-muted); cursor: pointer; transition: all 0.3s ease; }
+.dot.active { background-color: var(--dot-active-blue); border-color: var(--dot-active-blue); }
+
+.user-profile { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; color: var(--text-white); padding: 6px 0; }
+.user-profile .user-avatar { width: 24px; height: 24px; border-radius: 50%; }
+
+.site-header .cart-icon { stroke: var(--text-white); }
